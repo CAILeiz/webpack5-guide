@@ -71,3 +71,33 @@ const config = files.keys().reduce((obj, path) => {
 console.log("config", config);
 export default config;
 ```
+
+## context module API
+
+> 一个 context module 会导出一个（require）函数，此函数可以接收一个参数：request。
+
+> 此导出函数有三个属性：resolve, keys, id。
+
+- resolve 是一个函数，它返回 request 被解析后得到的模块 id。
+- keys 也是一个函数，它返回一个数组，由所有可能被此 context module 处理的请求（译者注：参考下面第二段代码中的 key）组成。
+
+```js
+
+如果想引入一个文件夹下面的所有文件，或者引入能匹配一个正则表达式的所有文件，这个功能就会很有帮助，例如：
+
+function importAll(r) {
+  r.keys().forEach(r);
+}
+
+importAll(require.context('../components/', true, /\.js$/));
+const cache = {};
+
+function importAll(r) {
+  r.keys().forEach((key) => (cache[key] = r(key)));
+}
+
+importAll(require.context('../components/', true, /\.js$/));
+// 在构建时(build-time)，所有被 require 的模块都会被填充到 cache 对象中。
+```
+
+- id 是 context module 的模块 id. 它可能在你使用 module.hot.accept 时会用到。
