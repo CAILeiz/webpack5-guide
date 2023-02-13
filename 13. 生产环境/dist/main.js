@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("process.env.NODE_ENV","production"),document.body.appendChild(function(){const e=document.createElement("pre");return e.innerHTML=["Hello webpack!","5 cubed is equal to "+(5,125)].join("\n\n"),e}())})();
