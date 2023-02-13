@@ -7,7 +7,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Production",
+      title: "13. 生产环境",
     }),
   ],
   output: {

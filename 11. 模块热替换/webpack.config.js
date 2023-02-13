@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Development",
+      title: "11. 模块热替换",
     }),
   ],
   module: {

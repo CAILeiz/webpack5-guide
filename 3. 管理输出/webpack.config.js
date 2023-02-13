@@ -8,7 +8,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "管理输出",
+      title: "3. 管理输出",
     }),
   ],
   output: {

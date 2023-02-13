@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Development",
+      title: "4. 开发环境",
     }),
   ],
   output: {
