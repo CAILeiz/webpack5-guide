@@ -31,3 +31,11 @@
 - 21. 集成
 - 22. 资源模块
 - 23. entry 高级用法
+
+
+### 启动流程
+- 切换到对应文件夹
+- npm install 安装依赖
+- npm run build 打包
+- 打包目录启动或者 npm run start 启动（需要在 package.json 中的 scripts 中查看启动命令，也可以自己配置）
+
